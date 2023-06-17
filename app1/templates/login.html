@@ -1,0 +1,66 @@
+{% load static %}
+<html>
+    <head>
+  <title>Login Form</title>
+<link 
+href="{% static 'image/icon1.jpg' %}"
+ rel="icon">
+ <link href="{% static 'css/style1.css' %}"
+  rel="stylesheet">
+    </head>
+    <body>
+        <div id="maindiv">
+<div id="header">
+<div id="head1">
+<marquee direction="right">
+    Css Template
+</marquee>    
+</div>
+
+  <img src="{% static 'image/logo1.jpg' %}"
+   id="logo1">
+   <img src="{% static 'image/logo2.jpg' %}"
+   id="logo2">
+</div>
+{% include 'menu.html' %}
+
+<div id="content">
+
+<form method="post">
+  {% csrf_token %}
+<table align="center" border="1">
+  <caption>Login Form</caption>
+<tr>
+  <td>email id</td>
+  <td>
+<input type="email" name="emailid"
+ required>    
+  </td>
+</tr>
+<tr>
+  <td>password</td>
+  <td>
+<input type="password" name="pwd"
+ required>    
+  </td>
+</tr>
+<tr>
+  <td colspan="2" align="center">
+<input type="submit" 
+value="login">
+  </td>
+</tr>
+</table>
+
+</form>
+
+</div>
+<div id="footer">
+<div align="center" 
+style="color:white">
+ &copy;css template-2023
+</div>
+</div>
+        </div>
+    </body>
+</html>

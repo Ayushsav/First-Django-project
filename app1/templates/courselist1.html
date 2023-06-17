@@ -1,0 +1,66 @@
+{% load static %}
+<html>
+<head>
+    <title>Course List</title>
+    <link href="image/icon1.jpg"
+          rel="icon">
+    <link href="{% static 'css/style1.css' %}"
+          rel="stylesheet">
+</head>
+<body>
+<div id="maindiv">
+<div id="header">
+    <span>Online Hobby School</span>
+ <img src="{% static 'image/logo1.jpg' %}" 
+      id="logo1">
+ 
+ <img src="{% static 'image/logo2.jpg' %}" 
+      id="logo2">
+</div>
+    
+<!-- <div id="menu">
+<a href="localhost">HOME</a>
+<a href="#courses"onclick="ayush()">COURSES</a>
+<a href="userlist/">User List</a>
+<a href="#">LOGIN</a>
+<a href="register/">REGISTER</a>
+</div> -->
+{% include 'menu.html' %}
+    
+<div id="content">
+ <table border="1" align="center">
+    <tr><th>Course Id</th>
+        <th>Course Name</th>
+        <th>Duration</th>
+        <th>Fees</th>
+        <th>Course icon</th>
+        
+    </tr>
+    {% for x in res %}
+    <tr>
+        <td> {{x.courseid}}</td>
+        <td> {{x.nm}}</td>
+        <td> {{x.duration}}</td>
+        <td> {{x.fees}}</td>
+        <td> <img src="{{media_url}}{{x.courseicon}}" alt="" height="50"width="80"></td>
+    </tr>
+{% endfor%}
+ </table>
+  </div>
+  
+</div>
+<div id="footer">
+    <div align="center">
+      &copy; HobbySchool-2023  
+    </div>
+    </div>
+</div>
+<script>
+  <!-- when click on cour id then show the content of course id -->
+  function ayush(){
+    document.getElementById("courses").style.backgroundColor='red';
+  }
+  
+</script>
+</body>
+</html>

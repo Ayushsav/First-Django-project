@@ -1,0 +1,47 @@
+{% load static %}
+<html>
+<head>
+    <link href="image/icon1.jpg"
+          rel="icon">
+    <link href="{% static 'css/style1.css' %}"
+          rel="stylesheet">
+</head>
+<body>
+<div id="maindiv">
+<div id="header">
+    <span>Online Hobby School</span>
+ <img src="{% static 'image/logo1.jpg' %}" 
+      id="logo1">
+ 
+ <img src="{% static 'image/logo2.jpg' %}" 
+      id="logo2">
+</div>
+    
+<!-- <div id="menu">
+<a href="localhost">HOME</a>
+<a href="#courses"onclick="ayush()">COURSES</a>
+<a href="userlist/">User List</a>
+<a href="#">LOGIN</a>
+<a href="register/">REGISTER</a>
+</div> -->
+    {% include 'menu.html'%}
+<div id="content">
+  
+  </div>
+  
+</div>
+<div id="footer">
+    <div align="center">
+      &copy; HobbySchool-2023  
+    </div>
+    </div>
+</div>
+<script>
+  <!-- when click on cour id then show the content of course id -->
+  function ayush(){
+    document.getElementById("courses").style.backgroundColor='red';
+  }
+  
+</script>
+</body>
+</html>

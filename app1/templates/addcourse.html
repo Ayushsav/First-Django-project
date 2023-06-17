@@ -1,0 +1,79 @@
+{% load static %}
+<html>
+    <head>
+  <title>Course Entry Form</title>
+<link 
+href="{% static 'image/icon1.jpg' %}"
+ rel="icon">
+ <link href="{% static 'css/style1.css' %}"
+  rel="stylesheet">
+    </head>
+    <body>
+        <div id="maindiv">
+<div id="header">
+<div id="head1">
+<marquee direction="right">
+    Css Template
+</marquee>    
+</div>
+
+  <img src="{% static 'image/logo1.jpg' %}"
+   id="logo1">
+   <img src="{% static 'image/logo2.jpg' %}"
+   id="logo2">
+</div>
+{% include 'adminmenu.html' %}
+<div id="content">
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+<table align="center" border="1">
+  <caption>Course Entry Form</caption>
+<tr>
+  <td>course name</td>
+  <td>
+<input type="text" name="nm"
+ required>    
+  </td>
+</tr>
+<tr>
+  <td>duration</td>
+  <td>
+<input type="text" name="duration"
+ required>    
+  </td>
+</tr>
+<tr>
+  <td>fees</td>
+  <td>
+<input type="text" name="fees"
+ required>    
+  </td>
+</tr>
+<tr>
+  <td>course icon</td>
+  <td>
+<input type="file" name="courseicon"
+ required>    
+  </td>
+</tr>
+<tr>
+  <td colspan="2" align="center">
+<input type="submit" 
+value="add course">
+  </td>
+</tr>
+</table>
+
+</form>
+
+</div>
+<div id="footer">
+<div align="center" 
+style="color:white">
+ &copy;css template-2023
+</div>
+</div>
+        </div>
+    </body>
+</html>
