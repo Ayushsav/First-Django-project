@@ -1,11 +1,11 @@
 {% load static %}
 <html>
 <head>
-    <title>Course List1</title>
     <link href="image/icon1.jpg"
           rel="icon">
     <link href="{% static 'css/style1.css' %}"
           rel="stylesheet">
+          <title>Student home page</title>
 </head>
 <body>
 <div id="maindiv">
@@ -25,27 +25,10 @@
 <a href="#">LOGIN</a>
 <a href="register/">REGISTER</a>
 </div> -->
-{% include 'menu.html' %}
-    
+    <!-- {% include 'menu.html'%} -->
+    {% include 'studentmenu.html' %}
 <div id="content">
- <table border="1" align="center">
-    <tr><th>Course Id</th>
-        <th>Course Name</th>
-        <th>Duration</th>
-        <th>Fees</th>
-        <th>Course icon</th>
-        
-    </tr>
-    {% for x in res %}
-    <tr>
-        <td> {{x.courseid}}</td>
-        <td> {{x.nm}}</td>
-        <td> {{x.duration}}</td>
-        <td> {{x.fees}}</td>
-        <td> <img src="{{media_url}}{{x.courseicon}}" alt="" height="50"width="80"></td>
-    </tr>
-{% endfor%}
- </table>
+  welcome ayushhhhhhhhhhhhhhhhhh     student 
   </div>
   
 </div>

@@ -1,7 +1,7 @@
 {% load static %}
 <html>
 <head>
-    <title>Course List1</title>
+    <title>Course List</title>
     <link href="image/icon1.jpg"
           rel="icon">
     <link href="{% static 'css/style1.css' %}"
@@ -28,21 +28,24 @@
 {% include 'menu.html' %}
     
 <div id="content">
+    <caption>Upcoming courses</caption>
  <table border="1" align="center">
-    <tr><th>Course Id</th>
+    <tr><th>Batch Id</th>
         <th>Course Name</th>
-        <th>Duration</th>
-        <th>Fees</th>
-        <th>Course icon</th>
+        <th>Startdate</th>
+        <th>Batch Timje</th>
+        <th>Faculty Name</th>
         
     </tr>
     {% for x in res %}
     <tr>
-        <td> {{x.courseid}}</td>
+        <td> {{x.batchid}}</td>
         <td> {{x.nm}}</td>
-        <td> {{x.duration}}</td>
-        <td> {{x.fees}}</td>
-        <td> <img src="{{media_url}}{{x.courseicon}}" alt="" height="50"width="80"></td>
+        <td> {{x.startdate}}</td>
+        <td> {{x.batchtime}}</td>
+        <!-- <td> <img src="{{media_url}}{{x.courseicon}}" alt="" height="50"width="80"></td> -->
+        <td>{{x.facultyname}}</td>
+        <!-- <td><a href="">Select Batch</a></td> -->
     </tr>
 {% endfor%}
  </table>

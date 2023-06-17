@@ -16,7 +16,11 @@ urlpatterns = [
     path('login/',views.login),
     path('adminhome/',views.adminhome),
     path('addcourse/',views.addcourse),
-    path('courselist1',views.courselist1),
-    path('addbatch/',views.addbatch)
+    path('courselist1/',views.courselist1),
+    path('addbatch/',views.addbatch),
+    path('studenthome/',views.studenthome),
+    path('batchlist1/',views.batchlist1),
+    path('batchlist2/',views.batchlist2),
+    path('courselist2/',views.courselist2)
     
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -24,7 +24,7 @@ def register(request):
         return render(request,"register.html")
 
 def userlist(request):
-    res=models.mstuser.objects.all()
+    res=models.mstuser.objects.filter(role="student")
     return render(request,"userlist.html",{'res':res})
 
 def login(request):
@@ -34,10 +34,16 @@ def login(request):
         res=models.mstuser.objects.filter(emailid=emailid,pwd=pwd)
         if len(res)>0:
          role=res[0].role
+         #for creating session
+         request.session['emailid']=emailid
+         request.session['role']=role
+         #-------------------------------------
          print(role)
          if role=="admin":
              print("Welcome Admin")
              return redirect("/adminhome/")
+         else:
+             return redirect("/studenthome/")
         return render(request,"home.html")
     else:
         return render(request,"login.html")
@@ -76,3 +82,21 @@ def addbatch(request):
         return render(request,"addbatch.html")
     else:
         return render(request,"addbatch.html")
+    
+def studenthome(request):
+    return render(request,"studenthome.html")
+
+# def logout(request):
+#     return redirect("/home.html")
+
+def batchlist1(request):
+    res=models.batch.objects.all()
+    return render(request,"batchlist1.html",{'res':res,})
+
+def batchlist2(request):
+    res=models.batch.objects.all()
+    return render(request,"batchlist2.html",{'res':res,})
+
+def courselist2(request):
+    res=models.course.objects.all()
+    return render(request,"courselist2.html",{'res':res,'media_url':media_url})
