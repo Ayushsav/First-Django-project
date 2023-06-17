@@ -21,6 +21,8 @@ urlpatterns = [
     path('studenthome/',views.studenthome),
     path('batchlist1/',views.batchlist1),
     path('batchlist2/',views.batchlist2),
-    path('courselist2/',views.courselist2)
+    path('courselist2/',views.courselist2),
+    path('admission/',views.admission),
+    path('logout1/',views.logout1)
     
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

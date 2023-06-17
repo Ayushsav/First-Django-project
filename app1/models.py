@@ -23,5 +23,16 @@ class batch(models.Model):
     batchtime=models.CharField(max_length=25)
     facultyname=models.CharField(max_length=25)
 
+class admission(models.Model):
+    srno=models.AutoField(primary_key=True)
+    nm=models.CharField(max_length=25)
+    dt1=models.DateField()
+    emailid=models.CharField(max_length=40)
+    
+    
+    
+    
+    
+
 
     

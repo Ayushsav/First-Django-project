@@ -6,6 +6,8 @@ from django.core.files.storage import FileSystemStorage
 #for display image
 from django.conf import settings
 media_url=settings.MEDIA_URL
+import datetime
+from django.contrib.auth import logout
 
 def home(request):
     return render(request,"home.html")
@@ -100,3 +102,25 @@ def batchlist2(request):
 def courselist2(request):
     res=models.course.objects.all()
     return render(request,"courselist2.html",{'res':res,'media_url':media_url})
+
+def admission(request):
+    if request.method=="GET":
+        batchid=request.GET.get("batchid")
+        print("batch id",batchid)
+        res=models.batch.objects.filter(batchid=batchid)
+        print(type(res))
+        return render(request,"admission.html",{'res':res})
+    else:
+        batchid=request.POST.get("batchid")
+        nm=request.POST.get("nm")
+        x=datetime.datetime.now()
+        dt1=x.strftime("%Y-%m-%d")
+        emailid=request.session["emailid"]
+        obj=models.admission(nm=nm,dt1=dt1,emailid=emailid)
+        obj.save()
+        return redirect("/batchlist1")
+        
+        
+def logout1(request):
+    logout(request)
+    return redirect("http://localhost:8000/")
